@@ -1,7 +1,7 @@
 @isTest
 private class TestUpdateAccountTurnover {
     @isTest 
-    static void test() {
+    static void should_aggregate_two_orders_on_account() {
         Account acc1 = new Account(Name = 'Test Account 1');
         insert acc1;
 
