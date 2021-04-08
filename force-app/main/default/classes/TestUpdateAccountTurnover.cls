@@ -17,6 +17,7 @@ private class TestUpdateAccountTurnover {
         );
         Insert pbe;
 
+        Test.startTest();
         Order o1 = new Order(AccountId = acc1.Id);
         insert o1;
 
@@ -24,6 +25,12 @@ private class TestUpdateAccountTurnover {
         insert oi1;
         OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
         insert oi2;        
+
+    
+        Test.stopTest();
+
+        System.assertEquals(2, [SELECT count(Id) FROM Order]);
+
     }
 
     //missing assert statement on unitary order case 
