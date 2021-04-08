@@ -24,4 +24,9 @@ private class testUpdateAccountCA {
         OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
         insert oi2;        
     }
+
+    //missing assert statement on unitary order case 
+    //missing case where adding order on account having 100+ orders
+    //not using bulkified statement
+    
 }

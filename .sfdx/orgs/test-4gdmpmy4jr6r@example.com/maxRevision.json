@@ -1,5 +1,5 @@
 {
-  "serverMaxRevisionCounter": 38,
+  "serverMaxRevisionCounter": 49,
   "sourceMembers": {
     "CustomField__Account.Chiffre_d_affaire__c": {
       "serverRevisionCounter": 3,
@@ -14,8 +14,8 @@
       "isNameObsolete": false
     },
     "Profile__Admin": {
-      "serverRevisionCounter": 31,
-      "lastRetrievedFromServer": 31,
+      "serverRevisionCounter": 42,
+      "lastRetrievedFromServer": 42,
       "memberType": "Profile",
       "isNameObsolete": false
     },
@@ -74,26 +74,26 @@
       "isNameObsolete": false
     },
     "ApexClass__MyTeamOrdersController": {
-      "serverRevisionCounter": 32,
-      "lastRetrievedFromServer": 32,
+      "serverRevisionCounter": 43,
+      "lastRetrievedFromServer": 43,
       "memberType": "ApexClass",
       "isNameObsolete": false
     },
     "ApexClass__UpdateAccounts": {
-      "serverRevisionCounter": 33,
-      "lastRetrievedFromServer": 33,
+      "serverRevisionCounter": 44,
+      "lastRetrievedFromServer": 44,
       "memberType": "ApexClass",
       "isNameObsolete": false
     },
     "ApexClass__UpdateAllAccounts": {
-      "serverRevisionCounter": 34,
-      "lastRetrievedFromServer": 34,
+      "serverRevisionCounter": 45,
+      "lastRetrievedFromServer": 45,
       "memberType": "ApexClass",
       "isNameObsolete": false
     },
     "ApexClass__testUpdateAccountCA": {
-      "serverRevisionCounter": 35,
-      "lastRetrievedFromServer": 35,
+      "serverRevisionCounter": 46,
+      "lastRetrievedFromServer": 46,
       "memberType": "ApexClass",
       "isNameObsolete": false
     },
@@ -104,15 +104,21 @@
       "isNameObsolete": false
     },
     "ApexTrigger__UpdateAccountCA": {
-      "serverRevisionCounter": 37,
+      "serverRevisionCounter": 49,
       "lastRetrievedFromServer": 37,
       "memberType": "ApexTrigger",
-      "isNameObsolete": false
+      "isNameObsolete": true
     },
     "ApexPage__MyTeamOrders": {
-      "serverRevisionCounter": 38,
-      "lastRetrievedFromServer": 38,
+      "serverRevisionCounter": 47,
+      "lastRetrievedFromServer": 47,
       "memberType": "ApexPage",
+      "isNameObsolete": false
+    },
+    "ListView__PricebookEntry.PB0011617895725482": {
+      "serverRevisionCounter": 48,
+      "lastRetrievedFromServer": null,
+      "memberType": "ListView",
       "isNameObsolete": false
     }
   }
