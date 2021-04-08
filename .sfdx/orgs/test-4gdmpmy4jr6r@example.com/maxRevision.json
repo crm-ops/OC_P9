@@ -1,5 +1,5 @@
 {
-  "serverMaxRevisionCounter": 49,
+  "serverMaxRevisionCounter": 56,
   "sourceMembers": {
     "CustomField__Account.Chiffre_d_affaire__c": {
       "serverRevisionCounter": 3,
@@ -14,8 +14,8 @@
       "isNameObsolete": false
     },
     "Profile__Admin": {
-      "serverRevisionCounter": 42,
-      "lastRetrievedFromServer": 42,
+      "serverRevisionCounter": 50,
+      "lastRetrievedFromServer": 50,
       "memberType": "Profile",
       "isNameObsolete": false
     },
@@ -38,26 +38,26 @@
       "isNameObsolete": false
     },
     "Layout__Account-Account (Marketing) Layout": {
-      "serverRevisionCounter": 4,
-      "lastRetrievedFromServer": 4,
+      "serverRevisionCounter": 53,
+      "lastRetrievedFromServer": 53,
       "memberType": "Layout",
       "isNameObsolete": false
     },
     "Layout__Account-Account (Sales) Layout": {
-      "serverRevisionCounter": 5,
-      "lastRetrievedFromServer": 5,
+      "serverRevisionCounter": 54,
+      "lastRetrievedFromServer": 54,
       "memberType": "Layout",
       "isNameObsolete": false
     },
     "Layout__Account-Account (Support) Layout": {
-      "serverRevisionCounter": 6,
-      "lastRetrievedFromServer": 6,
+      "serverRevisionCounter": 55,
+      "lastRetrievedFromServer": 55,
       "memberType": "Layout",
       "isNameObsolete": false
     },
     "Layout__Account-Account Layout": {
-      "serverRevisionCounter": 7,
-      "lastRetrievedFromServer": 7,
+      "serverRevisionCounter": 56,
+      "lastRetrievedFromServer": 56,
       "memberType": "Layout",
       "isNameObsolete": false
     },
@@ -92,8 +92,8 @@
       "isNameObsolete": false
     },
     "ApexClass__testUpdateAccountCA": {
-      "serverRevisionCounter": 46,
-      "lastRetrievedFromServer": 46,
+      "serverRevisionCounter": 51,
+      "lastRetrievedFromServer": 51,
       "memberType": "ApexClass",
       "isNameObsolete": false
     },
@@ -119,6 +119,12 @@
       "serverRevisionCounter": 48,
       "lastRetrievedFromServer": null,
       "memberType": "ListView",
+      "isNameObsolete": false
+    },
+    "ApexTrigger__UpdateAccountTurnover": {
+      "serverRevisionCounter": 52,
+      "lastRetrievedFromServer": 52,
+      "memberType": "ApexTrigger",
       "isNameObsolete": false
     }
   }
