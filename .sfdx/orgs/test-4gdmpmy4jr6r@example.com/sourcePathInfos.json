@@ -400,13 +400,14 @@
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/testUpdateAccountTurnover.cls": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/testUpdateAccountTurnover.cls",
-    "size": 1066,
-    "modifiedTime": 1617897220686,
-    "changeTime": 1617897220686,
-    "contentHash": "0f0548d5964447fa15cd5b1e635389ad0e10114d",
+    "size": 1071,
+    "modifiedTime": 1617897524128,
+    "changeTime": 1617897524128,
+    "contentHash": "4b6dc7aae08870c9a26528c37bed30b02381acc6",
     "state": "u",
     "package": "force-app",
-    "metadataType": "ApexClass"
+    "metadataType": "ApexClass",
+    "deferContentHash": true
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/testUpdateAccountTurnover.cls-meta.xml": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/testUpdateAccountTurnover.cls-meta.xml",

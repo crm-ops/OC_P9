@@ -1,5 +1,5 @@
 @isTest
-private class testUpdateAccountTurnover {
+private class TestUpdateAccountTurnover {
     @isTest 
     static void test() {
         Account acc1 = new Account(Name = 'Test Account 1');
