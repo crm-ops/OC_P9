@@ -1,5 +1,5 @@
 {
-  "serverMaxRevisionCounter": 56,
+  "serverMaxRevisionCounter": 63,
   "sourceMembers": {
     "CustomField__Account.Chiffre_d_affaire__c": {
       "serverRevisionCounter": 3,
@@ -14,8 +14,8 @@
       "isNameObsolete": false
     },
     "Profile__Admin": {
-      "serverRevisionCounter": 50,
-      "lastRetrievedFromServer": 50,
+      "serverRevisionCounter": 61,
+      "lastRetrievedFromServer": 61,
       "memberType": "Profile",
       "isNameObsolete": false
     },
@@ -92,16 +92,16 @@
       "isNameObsolete": false
     },
     "ApexClass__testUpdateAccountCA": {
-      "serverRevisionCounter": 51,
-      "lastRetrievedFromServer": 51,
+      "serverRevisionCounter": 63,
+      "lastRetrievedFromServer": 63,
       "memberType": "ApexClass",
-      "isNameObsolete": false
+      "isNameObsolete": true
     },
     "ApexTrigger__CalculMontant": {
-      "serverRevisionCounter": 36,
-      "lastRetrievedFromServer": 36,
+      "serverRevisionCounter": 57,
+      "lastRetrievedFromServer": 57,
       "memberType": "ApexTrigger",
-      "isNameObsolete": false
+      "isNameObsolete": true
     },
     "ApexTrigger__UpdateAccountCA": {
       "serverRevisionCounter": 49,
@@ -125,6 +125,12 @@
       "serverRevisionCounter": 52,
       "lastRetrievedFromServer": 52,
       "memberType": "ApexTrigger",
+      "isNameObsolete": false
+    },
+    "ApexClass__testUpdateAccountTurnover": {
+      "serverRevisionCounter": 62,
+      "lastRetrievedFromServer": 62,
+      "memberType": "ApexClass",
       "isNameObsolete": false
     }
   }
