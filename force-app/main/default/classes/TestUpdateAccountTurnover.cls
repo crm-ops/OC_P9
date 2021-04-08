@@ -29,7 +29,10 @@ private class TestUpdateAccountTurnover {
     
         Test.stopTest();
 
-        System.assertEquals(2, [SELECT count(Id) FROM Order]);
+        List<AggregateResult> agr = [SELECT Id  FROM Order];
+        
+
+        System.assertEquals(2, agr.size());
 
     }
 
