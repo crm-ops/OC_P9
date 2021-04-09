@@ -3,23 +3,23 @@ FORMAT  FILE
 ──────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 txt     /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-result.txt
 txt     /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-run-id.txt
-junit   /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-result-7071X00001WeCAw-junit.xml
-json    /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-result-7071X00001WeCAw.json
+junit   /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-result-7071X00001WeHWj-junit.xml
+json    /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/.sfdx/tools/testresults/apex/test-result-7071X00001WeHWj.json
 
 === Test Results
-TEST NAME                                                         OUTCOME  MESSAGE                                                                                                                                                                               RUNTIME (MS)
-────────────────────────────────────────────────────────────────  ───────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  ────────────
-TestUpdateAccountTurnover.should_aggregate_two_orders_on_account  Fail     System.DmlException: Update failed. First exception on row 0 with id 8011X000002QTcRQAW; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, CalculMontant: execution of BeforeUpdate  959
-                                                                           caused by: System.NullPointerException: Argument cannot be null.
-                                                                           Trigger.CalculMontant: line 4, column 1: []
+TEST NAME                                                         OUTCOME  MESSAGE                                                                                                                                                                                      RUNTIME (MS)
+────────────────────────────────────────────────────────────────  ───────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────  ────────────
+TestUpdateAccountTurnover.should_aggregate_two_orders_on_account  Fail     System.DmlException: Update failed. First exception on row 0 with id 8011X000002QULpQAO; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate  764
+                                                                           caused by: System.NullPointerException: Attempt to de-reference a null object
+                                                                           Trigger.UpdateAccountTurnover: line 31, column 1: []
                                                                            Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 54, column 1
 
 === Failures
 FULLNAME                                                          MESSAGE
-────────────────────────────────────────────────────────────────  ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
-TestUpdateAccountTurnover.should_aggregate_two_orders_on_account  System.DmlException: Update failed. First exception on row 0 with id 8011X000002QTcRQAW; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, CalculMontant: execution of BeforeUpdate
-                                                                  caused by: System.NullPointerException: Argument cannot be null.
-                                                                  Trigger.CalculMontant: line 4, column 1: []
+────────────────────────────────────────────────────────────────  ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+TestUpdateAccountTurnover.should_aggregate_two_orders_on_account  System.DmlException: Update failed. First exception on row 0 with id 8011X000002QULpQAO; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate
+                                                                  caused by: System.NullPointerException: Attempt to de-reference a null object
+                                                                  Trigger.UpdateAccountTurnover: line 31, column 1: []
                                                                   /Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/TestUpdateAccountTurnover.cls:54:1
 
 === Test Summary
@@ -32,13 +32,13 @@ Failing              1
 Skipped              0
 Pass Rate            0%
 Fail Rate            100%
-Test Start Time      Apr 9, 2021 6:52 PM
-Test Execution Time  959 ms
-Test Total Time      959 ms
-Command Time         3698 ms
+Test Start Time      Apr 9, 2021 7:42 PM
+Test Execution Time  764 ms
+Test Total Time      764 ms
+Command Time         3063 ms
 Hostname             https://data-java-1583-dev-ed.cs101.my.salesforce.com/
 Org Id               00D1X0000002tFWUAY
 Username             test-grt3b54ezt0d@example.com
-Test Run Id          7071X00001WeCAw
+Test Run Id          7071X00001WeHWj
 User Id              0051X000007M7fFQAS
 

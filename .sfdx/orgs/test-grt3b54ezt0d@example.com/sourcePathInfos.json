@@ -359,13 +359,14 @@
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/triggers/CalculMontant.trigger": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/triggers/CalculMontant.trigger",
-    "size": 159,
-    "modifiedTime": 1617812081994,
-    "changeTime": 1617812313059,
-    "contentHash": "34cf20d910051c67ce12fcd2d2580bc02276fc3a",
+    "size": 232,
+    "modifiedTime": 1617989707437,
+    "changeTime": 1617989707437,
+    "contentHash": "153157fad4356619761eb98807a3544839355c4d",
     "state": "u",
     "package": "force-app",
-    "metadataType": "ApexTrigger"
+    "metadataType": "ApexTrigger",
+    "deferContentHash": true
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/triggers/CalculMontant.trigger-meta.xml": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/triggers/CalculMontant.trigger-meta.xml",

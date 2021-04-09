@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 1,
+        "passing": 0,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "0%",
+        "failRate": "100%",
+        "testStartTime": "Apr 9, 2021 7:42 PM",
+        "testExecutionTime": "764 ms",
+        "testTotalTime": "764 ms",
+        "commandTime": "3063 ms",
+        "hostname": "https://data-java-1583-dev-ed.cs101.my.salesforce.com/",
+        "orgId": "00D1X0000002tFWUAY",
+        "username": "test-grt3b54ezt0d@example.com",
+        "testRunId": "7071X00001WeHWj",
+        "userId": "0051X000007M7fFQAS"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009KaaaUAC"
+            },
+            "Id": "07M1X000009KaaaUAC",
+            "QueueItemId": "7091X000000GOjEQAW",
+            "StackTrace": "Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 54, column 1",
+            "Message": "System.DmlException: Update failed. First exception on row 0 with id 8011X000002QULpQAO; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate\n\ncaused by: System.NullPointerException: Attempt to de-reference a null object\n\nTrigger.UpdateAccountTurnover: line 31, column 1: []",
+            "AsyncApexJobId": "7071X00001WeHWjQAN",
+            "MethodName": "should_aggregate_two_orders_on_account",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005uAgxQAE"
+                },
+                "Id": "01p1X000005uAgxQAE",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 764,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_orders_on_account"
+        }
+    ]
+}
