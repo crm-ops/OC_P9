@@ -10,6 +10,7 @@ private class TestUpdateAccountTurnover {
 
         //Create Pricebook
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB001'); 
+        Insert pb;
 
  
 
