@@ -51,7 +51,7 @@ private class TestUpdateAccountTurnover {
         OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
         insert oi2;        
 
-        Double accnt1TotalAmt = [SELECT TotalAmount FROM Account where Id =:acc1.Id];
+        Double accnt1TotalAmt = [SELECT Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
     
         Test.stopTest();
 
