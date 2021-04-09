@@ -26,7 +26,7 @@ trigger UpdateAccountTurnover on Order (after insert, after update) {
         Map<id, Account> popMap = new Map<id,Account>([select id, Chiffre_d_affaire__c from Account where id IN :accntIds]);
     
         List<AggregateResult> ars = [SELECT AccountId, Sum(TotalAmount) FROM Order WHERE AccountId IN :accntIds GROUP BY AccountId];
-        
+        System.debug('Size of ars array> ' +ars.isEmpty());
         for (AggregateResult ar : ars) {
             popMap.get(ar.Id).Chiffre_d_affaire__c= 2005.32;
             //popMap.get(ar.get('AccountId')).Sum_of_Positions__c = ar.get('expr0');

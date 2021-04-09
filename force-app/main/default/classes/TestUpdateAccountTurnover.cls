@@ -46,7 +46,7 @@ private class TestUpdateAccountTurnover {
         List<Order> agr = [SELECT Id  FROM Order];
         
 
-        System.assertEquals(2, agr.size());
+        System.assertEquals(1, agr.size());
 
     }
 
