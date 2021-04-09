@@ -12,7 +12,7 @@ private class TestUpdateAccountTurnover {
  
         //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
-            Pricebook2Id = Test.getStandardPricebookId(),
+            //Pricebook2Id = Test.getStandardPricebookId(),
             Product2Id = pd1.Id,
             UnitPrice = 1020,
             IsActive = true
