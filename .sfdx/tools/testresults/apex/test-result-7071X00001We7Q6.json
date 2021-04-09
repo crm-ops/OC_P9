@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 1,
+        "passing": 0,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "0%",
+        "failRate": "100%",
+        "testStartTime": "Apr 9, 2021 6:03 PM",
+        "testExecutionTime": "1475 ms",
+        "testTotalTime": "1475 ms",
+        "commandTime": "4401 ms",
+        "hostname": "https://data-java-1583-dev-ed.cs101.my.salesforce.com/",
+        "orgId": "00D1X0000002tFWUAY",
+        "username": "test-grt3b54ezt0d@example.com",
+        "testRunId": "7071X00001We7Q6",
+        "userId": "0051X000007M7fFQAS"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009KZg1UAG"
+            },
+            "Id": "07M1X000009KZg1UAG",
+            "QueueItemId": "7091X000000GOaSQAW",
+            "StackTrace": "Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 62, column 1",
+            "Message": "System.AssertException: Assertion Failed: Expected: 21500, Actual: null",
+            "AsyncApexJobId": "7071X00001We7Q6QAJ",
+            "MethodName": "should_aggregate_two_orders_on_account",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005uAgxQAE"
+                },
+                "Id": "01p1X000005uAgxQAE",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 1475,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_orders_on_account"
+        }
+    ]
+}
