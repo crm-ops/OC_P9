@@ -8,11 +8,14 @@ private class TestUpdateAccountTurnover {
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
 
+        //Create Pricebook
+        Pricebook2 pb = new Pricebook2 (Name = 'Test PB001'); 
 
  
+
         //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
-            //Pricebook2Id = Test.getStandardPricebookId(),
+            Pricebook2Id = pb.Id,
             Product2Id = pd1.Id,
             UnitPrice = 1020,
             IsActive = true
@@ -31,7 +34,7 @@ private class TestUpdateAccountTurnover {
 
 
         Test.startTest();
-        Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pbe.Id );
+        Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pb.Id );
 
         insert o1;
 
