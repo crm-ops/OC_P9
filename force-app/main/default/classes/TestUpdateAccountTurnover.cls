@@ -1,6 +1,6 @@
 @isTest
 private class TestUpdateAccountTurnover {
-    @isTest 
+    @isTest(SeeAllData=True)
     static void should_aggregate_two_orders_on_account() {
         Account acc1 = new Account(Name = 'Test Account 1');
         insert acc1;
@@ -13,7 +13,7 @@ private class TestUpdateAccountTurnover {
         Insert pb;
         
         //Standard pricebook entry 
-        Pricebook2 standardPB = [select Id from Pricebook2 where isStandard=true];
+        Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
         System.debug('Value of standardPB>'+ standardPB.Id);
 
         PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
