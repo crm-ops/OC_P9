@@ -51,7 +51,7 @@ private class TestUpdateAccountTurnover {
         OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
         insert oi2;        
 
-        Double accnt1TotalAmt = [SELECT Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
+        Account accnt1TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
     
         Test.stopTest();
 
@@ -59,7 +59,7 @@ private class TestUpdateAccountTurnover {
         
 
         System.assertEquals(1, agr.size());
-        System.assertEquals(21500,accnt1TotalAmt);
+        System.assertEquals(21500,accnt1TotalAmt.Chiffre_d_affaire__c);
 
     }
 
