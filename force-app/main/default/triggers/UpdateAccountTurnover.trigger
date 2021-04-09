@@ -1,4 +1,4 @@
-trigger UpdateAccountTurnover on Order (after insert, after update) {
+trigger UpdateAccountTurnover on Order (after update) {
 	
     
         List<Account> acntsToUpdate = new List<Account>(); 

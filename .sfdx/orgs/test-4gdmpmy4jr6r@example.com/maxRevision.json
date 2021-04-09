@@ -1,5 +1,5 @@
 {
-  "serverMaxRevisionCounter": 84,
+  "serverMaxRevisionCounter": 86,
   "sourceMembers": {
     "CustomField__Account.Chiffre_d_affaire__c": {
       "serverRevisionCounter": 3,
@@ -122,8 +122,8 @@
       "isNameObsolete": false
     },
     "ApexTrigger__UpdateAccountTurnover": {
-      "serverRevisionCounter": 84,
-      "lastRetrievedFromServer": 84,
+      "serverRevisionCounter": 86,
+      "lastRetrievedFromServer": 86,
       "memberType": "ApexTrigger",
       "isNameObsolete": false
     },

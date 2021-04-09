@@ -31,7 +31,7 @@ private class TestUpdateAccountTurnover {
 
 
         Test.startTest();
-        Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft' );
+        Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pbe.Id );
 
         insert o1;
 
