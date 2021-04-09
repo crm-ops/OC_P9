@@ -13,7 +13,7 @@ private class TestUpdateAccountTurnover {
         Insert pb;
         
         //Standard pricebook entry 
-        Pricebook2 standardPB = [select id from Pricebook2 where isStandard=true];
+        Pricebook2 standardPB = [select Id from Pricebook2 where isStandard=true];
         System.debug('Value of standardPB>'+ standardPB.Id);
 
         PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
