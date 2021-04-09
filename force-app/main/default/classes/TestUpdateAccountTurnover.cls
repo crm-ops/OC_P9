@@ -7,6 +7,8 @@ private class TestUpdateAccountTurnover {
 
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
+
+
  
         //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
@@ -17,8 +19,20 @@ private class TestUpdateAccountTurnover {
         );
         Insert pbe;
 
+        //Create the Contract
+        Contract ctrct = new Contract(
+            AccountId = acc1.Id,
+            Status='Draft',
+            StartDate = Date.newInstance(2021, 4, 1),
+            ContractTerm = 24
+        );
+
+        Insert ctrct;
+
+
         Test.startTest();
-        Order o1 = new Order(AccountId = acc1.Id);
+        Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft' );
+
         insert o1;
 
         OrderItem oi1 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150);
