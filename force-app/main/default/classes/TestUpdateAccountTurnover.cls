@@ -11,7 +11,11 @@ private class TestUpdateAccountTurnover {
         //Create Pricebook
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB001'); 
         Insert pb;
-
+        
+        //Standard pricebook entry 
+        Pricebook2 standardPB = [select id from Pricebook2 where isStandard=true];
+        PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
+        insert standardPBE;
  
 
         //Create the PricebookEntry
