@@ -1,8 +1,15 @@
 trigger CalculMontant on Order (before update) {
+
+	List<Order> lo = new List<Oorder>();
 	
-	Order newOrder= trigger.new[0];
-	if (newOrder.TotalAmount!=null && newOrder.ShipmentCost__c!=null ){
-	newOrder.NetAmount__c = newOrder.TotalAmount - newOrder.ShipmentCost__c;
-	//update newOrder;
-	}	
+	for (Order o : trigger.new) {
+
+	if (o.TotalAmount!=null && o.ShipmentCost__c!=null ){
+		o.NetAmount__c = o.TotalAmount - o.ShipmentCost__c;
+		lo.add(o);
+		}
+	}
+	
+	update lo;
+
 }
