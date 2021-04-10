@@ -33,7 +33,7 @@ trigger UpdateAccountTurnover on Order (after update) {
         //List of sour account filtered by ids covered in the trigger
         List<Account> acntsSource = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:acntIds ];
         //Query that aggregates all order TotalAmt by account - migh not be useful
-        List<AggregateResult> ars = [SELECT AccountId, Sum(TotalAmount) Turnover FROM Order WHERE AccountId IN :acntIds GROUP BY AccountId];
+        // List<AggregateResult> ars = [SELECT AccountId, Sum(TotalAmount) Turnover FROM Order WHERE AccountId IN :acntIds GROUP BY AccountId];
     
         // get a map of the accounts with the aggregated revenue field
        //  Map<id, Account> popMap = new Map<id,Account>([select id, Chiffre_d_affaire__c from Account where id IN :accntIds]);
