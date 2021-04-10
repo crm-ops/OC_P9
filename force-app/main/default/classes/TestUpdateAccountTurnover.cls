@@ -2,7 +2,7 @@
 private class TestUpdateAccountTurnover {
     @isTest(SeeAllData=True)
     static void should_aggregate_two_orders_on_account() {
-        Account acc1 = new Account(Name = 'Test Account 1');
+        Account acc1 = new Account(Name = 'Test Account 1', Chiffre_d_affaire__c=0);
         insert acc1;
 
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');

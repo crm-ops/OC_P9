@@ -50,8 +50,14 @@ trigger UpdateAccountTurnover on Order (after update) {
             Order newOrder= trigger.new[i];
 
                 for (Account acc : acntsSource) {
-            
+
+                try{
                 acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + newOrder.TotalAmount;
+                
+                }catch (System.NullPointerException e) {
+                acc.Chiffre_d_affaire__c = 0 + newOrder.TotalAmount;
+                }
+                
                 acntsToUpdate.add(acc);
             }
         }
