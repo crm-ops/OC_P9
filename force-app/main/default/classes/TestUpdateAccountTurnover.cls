@@ -5,6 +5,9 @@ private class TestUpdateAccountTurnover {
         Account acc1 = new Account(Name = 'Test Account 1', Chiffre_d_affaire__c=0);
         insert acc1;
 
+        Account acc2 = new Account(Name = 'Test Account 1');
+        insert acc2;
+
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
 
@@ -40,28 +43,49 @@ private class TestUpdateAccountTurnover {
 
         Insert ctrct;
 
+        //Create the Contract
+        Contract ctrct2 = new Contract(
+            AccountId = acc2.Id,
+            Status='Draft',
+            StartDate = Date.newInstance(2021, 4, 1),
+            ContractTerm = 24
+        );
+
 
         Test.startTest();
         Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=350);
+        Order o2 = new Order(AccountId = acc2.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct2.Id, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=650);
 
         insert o1;
+        insert o2;
 
         OrderItem oi1 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150);
         insert oi1;
         OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
-        insert oi2;      
+        insert oi2; 
         
-        update o1;
+        OrderItem o2i1 = new OrderItem (OrderId = o2.Id, PricebookEntryId = pbe.Id, Quantity=50, UnitPrice = 150);
+        insert o2i1;
+        OrderItem o2i2 = new OrderItem (OrderId = o2.Id, PricebookEntryId = pbe.Id, Quantity=70, UnitPrice = 1000);
+        insert o2i2; 
+        
+        List<Order> listo = new List<Order>();
+        listo.add(o1,o2);
+
+        update listo;
 
         Account accnt1TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
-    
+        Account accnt2TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc2.Id];
+
         Test.stopTest();
 
         List<Order> agr = [SELECT Id  FROM Order];
         
 
-        System.assertEquals(1, agr.size());
+        System.assertEquals(2, agr.size());
         System.assertEquals(21500,accnt1TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(77500,accnt1TotalAmt.Chiffre_d_affaire__c);
+
 
     }
 
