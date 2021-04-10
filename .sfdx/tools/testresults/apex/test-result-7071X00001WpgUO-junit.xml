@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="force.apex" timestamp="2021-04-10T18:37:55+02:00" hostname="https://data-page-19352-dev-ed.cs101.my.salesforce.com/" tests="1" failures="1"  errors="0"  time="1.26">
+        <properties>
+            <property name="outcome" value="Failed"/>
+            <property name="testsRan" value="1"/>
+            <property name="passing" value="0"/>
+            <property name="failing" value="1"/>
+            <property name="skipped" value="0"/>
+            <property name="passRate" value="0%"/>
+            <property name="failRate" value="100%"/>
+            <property name="testStartTime" value="Apr 10, 2021 6:37 PM"/>
+            <property name="testExecutionTime" value="1.26 s"/>
+            <property name="testTotalTime" value="1.26 s"/>
+            <property name="commandTime" value="3.96 s"/>
+            <property name="hostname" value="https://data-page-19352-dev-ed.cs101.my.salesforce.com/"/>
+            <property name="orgId" value="00D1X00000034R1UAI"/>
+            <property name="username" value="test-in7nqa4fsmgt@example.com"/>
+            <property name="testRunId" value="7071X00001WpgUO"/>
+            <property name="userId" value="0051X000007SSFeQAO"/>
+        </properties>
+        <testcase name="should_aggregate_two_orders_on_account" classname="TestUpdateAccountTurnover" time="1.26">
+            <failure message="System.DmlException: Update failed. First exception on row 0 with id 8011X000002CvRrQAK; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate
+
+caused by: System.ListException: Duplicate id in list: 0011X00000oHyy5QAC
+
+Trigger.UpdateAccountTurnover: line 61, column 1: []"><![CDATA[Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 77, column 1]]></failure>
+        </testcase>
+    </testsuite>
+</testsuites>

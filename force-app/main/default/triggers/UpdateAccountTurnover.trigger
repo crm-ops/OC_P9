@@ -18,14 +18,10 @@ trigger UpdateAccountTurnover on Order (after update) {
 
         //this account list is the final list to updt the DB  
        
-        if (!Trigger.isDelete) {
-            for (Order o : Trigger.new) {
-                acntIds.add(o.AccountId);
-            }
-        }
+        
     
-        if (Trigger.isUpdate || Trigger.isDelete) {
-            for (Order o : Trigger.old) {
+        if (Trigger.isUpdate) {
+            for (Order o : Trigger.new) {
                 acntIds.add(o.AccountId);
             }
         }
@@ -50,12 +46,11 @@ trigger UpdateAccountTurnover on Order (after update) {
             
                 for (Account acc : acntsSource) {
 
-                try{
+              
+                if(o.AccountId==acc.Id){    
                 acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + o.TotalAmount;
-                
-                }catch (System.NullPointerException e) {
-                acc.Chiffre_d_affaire__c = 0 + o.TotalAmount;
                 }
+                
                 
                 acntsToUpdate.add(acc);
             }
