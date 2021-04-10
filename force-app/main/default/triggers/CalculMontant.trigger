@@ -1,6 +1,6 @@
 trigger CalculMontant on Order (before update) {
 
-	List<Order> lo = new List<Oorder>();
+	List<Order> lo = new List<Order>();
 	
 	for (Order o : trigger.new) {
 
