@@ -5,7 +5,7 @@ private class TestUpdateAccountTurnover {
         Account acc1 = new Account(Name = 'Test Account 1', Chiffre_d_affaire__c=0);
         insert acc1;
 
-        Account acc2 = new Account(Name = 'Test Account 1');
+        Account acc2 = new Account(Name = 'Test Account 2');
         insert acc2;
 
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');

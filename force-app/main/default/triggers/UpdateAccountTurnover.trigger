@@ -46,16 +46,15 @@ trigger UpdateAccountTurnover on Order (after update) {
             accntsToUpdate.add(popMap.get(ar.id));
         }*/
 
-        for(integer i=0; i< trigger.new.size(); i++){
-            Order newOrder= trigger.new[i];
-
+        for(Order o : Trigger.new){
+            
                 for (Account acc : acntsSource) {
 
                 try{
-                acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + newOrder.TotalAmount;
+                acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + o.TotalAmount;
                 
                 }catch (System.NullPointerException e) {
-                acc.Chiffre_d_affaire__c = 0 + newOrder.TotalAmount;
+                acc.Chiffre_d_affaire__c = 0 + o.TotalAmount;
                 }
                 
                 acntsToUpdate.add(acc);
