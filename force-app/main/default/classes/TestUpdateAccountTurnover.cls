@@ -86,7 +86,7 @@ private class TestUpdateAccountTurnover {
 
         System.assertEquals(2, agr.size());
         System.assertEquals(21500,accnt1TotalAmt.Chiffre_d_affaire__c);
-        System.assertEquals(77500,accnt1TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(77500,accnt2TotalAmt.Chiffre_d_affaire__c);
 
 
     }
