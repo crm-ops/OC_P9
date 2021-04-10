@@ -70,7 +70,8 @@ private class TestUpdateAccountTurnover {
         insert o2i2; 
         
         List<Order> listo = new List<Order>();
-        listo.add(o1,o2);
+        listo.add(o1);
+        listo.add(o2);
 
         update listo;
 
