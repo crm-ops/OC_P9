@@ -49,10 +49,11 @@ trigger UpdateAccountTurnover on Order (after update) {
               
                 if(o.AccountId==acc.Id){    
                 acc.Chiffre_d_affaire__c = acc.Chiffre_d_affaire__c + o.TotalAmount;
-                }
+                acntsToUpdate.add(acc);    
+            }
                 
                 
-                acntsToUpdate.add(acc);
+                
             }
         }
     
