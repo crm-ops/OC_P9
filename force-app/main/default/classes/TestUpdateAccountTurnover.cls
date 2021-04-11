@@ -80,7 +80,7 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id FROM Order];
+        listobase = [SELECT Id, AccountId FROM Order];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
