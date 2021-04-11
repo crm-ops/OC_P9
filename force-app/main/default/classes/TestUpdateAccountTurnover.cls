@@ -55,7 +55,7 @@ private class TestUpdateAccountTurnover {
 
         //prepare to insert a list of 100 orders
         List<Order> listobase = new List<Order>();
-        for (Integer i = 0; i<100 ) {
+        for (Integer i = 0; i<100;i++ ) {
             Order o = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=350);
             listobase.add(o);
         }
