@@ -105,30 +105,7 @@ private class TestUpdateAccountTurnover {
 
         Test.startTest();
         
-        /*Order o1 = new Order(AccountId = acc1.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct.Id, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=350);
-        insert o1;
-        Order o2 = new Order(AccountId = acc2.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = ctrct2.Id, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=650);
-        insert o2;
-
-        
-
-        OrderItem oi1 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150);
-        insert oi1;
-        OrderItem oi2 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=20, UnitPrice = 1000);
-        insert oi2; 
-        
-        OrderItem o2i1 = new OrderItem (OrderId = o2.Id, PricebookEntryId = pbe.Id, Quantity=50, UnitPrice = 150);
-        insert o2i1;
-        OrderItem o2i2 = new OrderItem (OrderId = o2.Id, PricebookEntryId = pbe.Id, Quantity=70, UnitPrice = 1000);
-        insert o2i2; 
-        
-        List<Order> listo = new List<Order>();
-        listo.add(o1);
-        listo.add(o2);
-
-        update listo;
-
-         */
+       
 
         update listobase;
         
@@ -149,8 +126,6 @@ private class TestUpdateAccountTurnover {
 
     }
 
-    //missing assert statement on unitary order case 
-    //missing case where adding order on account having 100+ orders
-    //not using bulkified statement
+    
     
 }
