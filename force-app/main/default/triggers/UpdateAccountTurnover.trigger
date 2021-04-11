@@ -50,9 +50,9 @@ trigger UpdateAccountTurnover on Order (after update) {
         for (Account a : acntsSource) {
 
                 for (AggregateResult ar :  acntsTarget) {
-                    if(a.Id == ar.getField('AccountId')) {
+                    if(a.Id == ar.get('AccountId')) {
 
-                        a.Chiffre_d_affaire_c = ar.ca;
+                        a.Chiffre_d_affaire_c = ar.get('ca');
                         acntsToUpdate.add(a);
 
                     }
