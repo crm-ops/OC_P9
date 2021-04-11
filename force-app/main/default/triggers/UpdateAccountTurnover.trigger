@@ -46,7 +46,8 @@ trigger UpdateAccountTurnover on Order (after update) {
         List<AggregateResult> acntsTartget = [SELECT AccountId, SUM(TotalAmount) ca from Order WHERE AccountId=: acntIds GROUP BY AccountId ]; 
 
 
-        for(Order o : Trigger.new){
+
+        /*for(Order o : Trigger.new){
             
                 for (Account acc : acntsSource) {
 
@@ -62,7 +63,7 @@ trigger UpdateAccountTurnover on Order (after update) {
         }
     
         //final bulkified account update
-        update acntsToUpdate;
+        update acntsToUpdate;*/
 
 
 }
