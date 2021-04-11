@@ -47,6 +47,21 @@ trigger UpdateAccountTurnover on Order (after update) {
 
 
 
+        for (Account a : acntsSource) {
+
+                for (AggregateResult ar :  acntsTartget) {
+                    if(a.Id == ar.AccountId) {
+
+                        a.Chiffre_d_affaire_c = ar.ca;
+                        acntsToUpdate.add(a);
+
+                    }
+
+                }
+
+        }
+
+
         /*for(Order o : Trigger.new){
             
                 for (Account acc : acntsSource) {
