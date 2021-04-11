@@ -52,7 +52,7 @@ trigger UpdateAccountTurnover on Order (after update) {
                 for (AggregateResult ar :  acntsTarget) {
                     if(a.Id == ar.get('AccountId')) {
 
-                        a.Chiffre_d_affaire__c = ar.get('ca');
+                        a.Chiffre_d_affaire__c = (Decimal)ar.get('ca');
                         acntsToUpdate.add(a);
 
                     }
