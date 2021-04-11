@@ -60,6 +60,8 @@ private class TestUpdateAccountTurnover {
             listobase.add(o);
         }
         insert listobase;
+
+        listobase = [SELECT Id FROM Order];
         
         //for each order create 1 orderitem line
         List<OrderItem> listoibase = new List<OrderItem>();
