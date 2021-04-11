@@ -8,7 +8,7 @@ private class TestUpdateAccountTurnover {
         Account acc2 = new Account(Name = 'Test Account 2', Chiffre_d_affaire__c=0);
         insert acc2;
 
-        List<Account> al = ew List<Account>();
+        List<Account> al = new List<Account>();
             al.add(acc1);
             al.add(acc2);
 
