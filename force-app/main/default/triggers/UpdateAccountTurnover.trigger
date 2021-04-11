@@ -63,7 +63,8 @@ trigger UpdateAccountTurnover on Order (after update) {
         }
     
         //final bulkified account update
-        update acntsToUpdate;*/
+        */
+        update acntsToUpdate;
 
 
 }
