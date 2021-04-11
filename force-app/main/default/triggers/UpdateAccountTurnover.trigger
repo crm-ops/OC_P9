@@ -43,14 +43,14 @@ trigger UpdateAccountTurnover on Order (after update) {
             accntsToUpdate.add(popMap.get(ar.id));
         }*/
         List<Account> acntsSource = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:acntIds ];
-        List<AggregateResult> acntsTartget = [SELECT AccountId, SUM(TotalAmount) ca from Order WHERE AccountId=: acntIds GROUP BY AccountId ]; 
+        List<AggregateResult> acntsTarget = [SELECT AccountId, SUM(TotalAmount) ca from Order WHERE AccountId=: acntIds GROUP BY AccountId ]; 
 
 
 
         for (Account a : acntsSource) {
 
-                for (AggregateResult ar :  acntsTartget) {
-                    if(a.Id == ar.AccountId) {
+                for (AggregateResult ar :  acntsTarget) {
+                    if(a.Id == ar.getField('AccountId')) {
 
                         a.Chiffre_d_affaire_c = ar.ca;
                         acntsToUpdate.add(a);
