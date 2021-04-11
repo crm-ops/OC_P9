@@ -22,12 +22,13 @@ trigger UpdateAccountTurnover on Order (after update) {
     
         if (Trigger.isUpdate) {
             for (Order o : Trigger.new) {
+
                 acntIds.add(o.AccountId);
             }
         }
 
         //List of sour account filtered by ids covered in the trigger
-        List<Account> acntsSource = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:acntIds ];
+        
         //Query that aggregates all order TotalAmt by account - migh not be useful
         // List<AggregateResult> ars = [SELECT AccountId, Sum(TotalAmount) Turnover FROM Order WHERE AccountId IN :acntIds GROUP BY AccountId];
     
@@ -41,6 +42,9 @@ trigger UpdateAccountTurnover on Order (after update) {
             //popMap.get(ar.get('AccountId')).Sum_of_Positions__c = ar.get('expr0');
             accntsToUpdate.add(popMap.get(ar.id));
         }*/
+        List<Account> acntsSource = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:acntIds ];
+        List<AggregateResult> acntsTartget = [SELECT AccountId, SUM(TotalAmount) ca from Order WHERE AccountId=: acntIds GROUP BY AccountId ]; 
+
 
         for(Order o : Trigger.new){
             
