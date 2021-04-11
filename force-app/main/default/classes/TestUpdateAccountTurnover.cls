@@ -64,6 +64,7 @@ private class TestUpdateAccountTurnover {
         for(Account a:al) {
             if(a.id == acc1.Id){
                 crtid=ctrct.Id;
+
             } else 
             {
                 crtid=ctrct2.Id;
@@ -82,9 +83,16 @@ private class TestUpdateAccountTurnover {
         listobase = [SELECT Id FROM Order];
         
         //for each order create 1 orderitem line
+        Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
         for ( Order o :listobase) {
-            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150);
+            if (o.AccountId==acc1.Id) {
+                qty=10;
+            } else {
+                qty = 20;
+            }
+
+            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=qty, UnitPrice = 150);
             listoibase.add(oi);
         }
 
@@ -120,9 +128,11 @@ private class TestUpdateAccountTurnover {
 
         update listo;
 
+         */
+
         Account accnt1TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
         Account accnt2TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc2.Id];
-        */
+       
         update listobase;
         
         Test.stopTest();
@@ -130,9 +140,9 @@ private class TestUpdateAccountTurnover {
         List<Order> agr = [SELECT Id  FROM Order];
         
 
-        System.assertEquals(100, agr.size());
-        //System.assertEquals(21500,accnt1TotalAmt.Chiffre_d_affaire__c);
-        //System.assertEquals(77500,accnt2TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(200, agr.size());
+        System.assertEquals(150000,accnt1TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(300000,accnt2TotalAmt.Chiffre_d_affaire__c);
 
 
     }
