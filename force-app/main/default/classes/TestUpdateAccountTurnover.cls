@@ -130,12 +130,14 @@ private class TestUpdateAccountTurnover {
 
          */
 
-        Account accnt1TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
-        Account accnt2TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc2.Id];
-       
         update listobase;
         
+        
+        
         Test.stopTest();
+
+        Account accnt1TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc1.Id];
+        Account accnt2TotalAmt = [SELECT Id,Chiffre_d_affaire__c FROM Account where Id =:acc2.Id];
         
         List<Order> agr = [SELECT Id  FROM Order];
         
