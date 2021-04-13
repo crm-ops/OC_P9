@@ -69,9 +69,9 @@ private class TestUpdateAccountBatch {
 
                 }
             
-                Contract ct =    
+            
 
-             Order o = new Order( AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = contractId , Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, ImportStatus__c='OrderImported');
+             Order o = new Order( AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtId , Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, ImportStatus__c='OrderImported');
              
              loi.add(o);
             }
