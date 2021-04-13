@@ -24,6 +24,6 @@ private class TestUpdateAccountBatch {
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
-        System.assertEquals(10, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
+        System.assertEquals(0, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
     }
 }
