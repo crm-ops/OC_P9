@@ -10,12 +10,14 @@ private class TestUpdateAccountBatch {
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
 
-        //Standard pricebook entry 
-        Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
-        System.debug('Value of standardPB>'+ standardPB.Id);
+         //Standard pricebook entry 
+         Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
+         System.debug('Value of standardPB>'+ standardPB.Id);
 
         PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
         insert standardPBE;
+
+       
 
         //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
