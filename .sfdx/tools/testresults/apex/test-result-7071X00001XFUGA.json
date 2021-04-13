@@ -1,0 +1,70 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 2,
+        "passing": 1,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "50%",
+        "failRate": "50%",
+        "testStartTime": "Apr 13, 2021 9:50 AM",
+        "testExecutionTime": "8662 ms",
+        "testTotalTime": "8662 ms",
+        "commandTime": "14046 ms",
+        "hostname": "https://data-page-19352-dev-ed.cs101.my.salesforce.com",
+        "orgId": "00D1X00000034R1UAI",
+        "username": "test-in7nqa4fsmgt@example.com",
+        "testRunId": "7071X00001XFUGA",
+        "userId": "0051X000007SSFeQAO"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009SpmDUAS"
+            },
+            "Id": "07M1X000009SpmDUAS",
+            "QueueItemId": "7091X0000019lveQAA",
+            "StackTrace": "Class.TestUpdateAccountTurnover.should_aggregate_two_ordered_orders_on_account: line 81, column 1",
+            "Message": "System.DmlException: Insert failed. First exception on row 0; first error: INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST, Status: bad value for restricted picklist field: Ordered: [Status]",
+            "AsyncApexJobId": "7071X00001XFUGAQA5",
+            "MethodName": "should_aggregate_two_ordered_orders_on_account",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005rXLMQA2"
+                },
+                "Id": "01p1X000005rXLMQA2",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 1186,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_ordered_orders_on_account"
+        },
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009SpmEUAS"
+            },
+            "Id": "07M1X000009SpmEUAS",
+            "QueueItemId": "7091X0000019lveQAA",
+            "StackTrace": null,
+            "Message": null,
+            "AsyncApexJobId": "7071X00001XFUGAQA5",
+            "MethodName": "should_not_aggregate_two_orders_status_diff_from_ordered",
+            "Outcome": "Pass",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005rXLMQA2"
+                },
+                "Id": "01p1X000005rXLMQA2",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 7476,
+            "FullName": "TestUpdateAccountTurnover.should_not_aggregate_two_orders_status_diff_from_ordered"
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Passed",
+        "testsRan": 1,
+        "passing": 1,
+        "failing": 0,
+        "skipped": 0,
+        "passRate": "100%",
+        "failRate": "0%",
+        "testStartTime": "Apr 11, 2021 7:20 PM",
+        "testExecutionTime": "6607 ms",
+        "testTotalTime": "6607 ms",
+        "commandTime": "10181 ms",
+        "hostname": "https://data-page-19352-dev-ed.cs101.my.salesforce.com",
+        "orgId": "00D1X00000034R1UAI",
+        "username": "test-in7nqa4fsmgt@example.com",
+        "testRunId": "7071X00001WrUUX",
+        "userId": "0051X000007SSFeQAO"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009SHB8UAO"
+            },
+            "Id": "07M1X000009SHB8UAO",
+            "QueueItemId": "7091X0000019i7gQAA",
+            "StackTrace": null,
+            "Message": null,
+            "AsyncApexJobId": "7071X00001WrUUXQA3",
+            "MethodName": "should_aggregate_two_orders_on_account",
+            "Outcome": "Pass",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005rXLMQA2"
+                },
+                "Id": "01p1X000005rXLMQA2",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 6607,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_orders_on_account"
+        }
+    ]
+}

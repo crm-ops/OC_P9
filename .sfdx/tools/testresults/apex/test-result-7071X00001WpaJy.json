@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 1,
+        "passing": 0,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "0%",
+        "failRate": "100%",
+        "testStartTime": "Apr 10, 2021 5:10 PM",
+        "testExecutionTime": "5760 ms",
+        "testTotalTime": "5760 ms",
+        "commandTime": "10987 ms",
+        "hostname": "https://data-page-19352-dev-ed.cs101.my.salesforce.com/",
+        "orgId": "00D1X00000034R1UAI",
+        "username": "test-in7nqa4fsmgt@example.com",
+        "testRunId": "7071X00001WpaJy",
+        "userId": "0051X000007SSFeQAO"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009S9TiUAK"
+            },
+            "Id": "07M1X000009S9TiUAK",
+            "QueueItemId": "7091X0000019hZmQAI",
+            "StackTrace": "Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 54, column 1",
+            "Message": "System.DmlException: Update failed. First exception on row 0 with id 8011X000002CvQoQAK; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate\n\ncaused by: System.NullPointerException: Attempt to de-reference a null object\n\nTrigger.UpdateAccountTurnover: line 54, column 1: []",
+            "AsyncApexJobId": "7071X00001WpaJyQAJ",
+            "MethodName": "should_aggregate_two_orders_on_account",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005rXLMQA2"
+                },
+                "Id": "01p1X000005rXLMQA2",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 5760,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_orders_on_account"
+        }
+    ]
+}
