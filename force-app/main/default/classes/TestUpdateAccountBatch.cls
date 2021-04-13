@@ -17,7 +17,7 @@ private class TestUpdateAccountBatch {
 
         
     }
-    @isTest(SeeAllData=True)
+    @isTest
     static void test() {
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
