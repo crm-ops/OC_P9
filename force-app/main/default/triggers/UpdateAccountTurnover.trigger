@@ -12,7 +12,7 @@ trigger UpdateAccountTurnover on Order (after update) {
             for (Order o : Trigger.new) {
 
                 //adding Order status condition to "Ordered" 
-                if(o.Status=='Ordered')
+                if(o.Status=='Ordered' && o.ImportStatus__c=='NotImported')
                 acntIds.add(o.AccountId);
             }
         }
