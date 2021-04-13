@@ -1,4 +1,4 @@
-@isTest(SeeAllData=True)
+@isTest
 private class TestUpdateAccountBatch {
     @testSetup
     static void setup() {
@@ -17,7 +17,8 @@ private class TestUpdateAccountBatch {
 
         
     }
-    @isTest static void test() {
+    @isTest(SeeAllData=True)
+    static void test() {
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
         Id batchId = Database.executeBatch(uab);
