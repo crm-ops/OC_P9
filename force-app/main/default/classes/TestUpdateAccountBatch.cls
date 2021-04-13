@@ -31,6 +31,7 @@ private class TestUpdateAccountBatch {
         } 
             insert lci;
 
+        Map<Id, Contract> mc= new Map<Id,Contract>([Select AccountId, Id from Contract]);  
 
         //for each account create 6 Orders 
         lai = [SELECT Id, ContractId from Account where ImportStatus__c='AccountImported'];
@@ -39,7 +40,8 @@ private class TestUpdateAccountBatch {
         for (Account a : lai) {
 
             for (Integer nborders = 0; nborders <6; nborders++){
-             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = a.ContractId, Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, TotalAmount=simTotAmt);
+             Id crtId = mc.get(a.Id).get('ContractId');   
+             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtId , Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, TotalAmount=simTotAmt);
              loi.add(o);
              simTotAmt +=100;
 
