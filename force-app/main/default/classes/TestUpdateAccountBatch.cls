@@ -33,12 +33,13 @@ private class TestUpdateAccountBatch {
 
 
         //for each account create 6 Orders 
+        lai = [SELECT Id, ContractId from Account where ImportStatus__c='AccountImported'];
         List<Order> loi = new List<Order>(); 
-        Currency simTotAmt = 10000;
+        Integer simTotAmt = 10000;
         for (Account a : lai) {
 
-            for (Integer nborders = 0; nborders <6; nmborders++){
-             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = a.ContractId, Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350);
+            for (Integer nborders = 0; nborders <6; nborders++){
+             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = a.ContractId, Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, TotalAmount=simTotAmt);
              loi.add(o);
              simTotAmt +=100;
 
@@ -57,7 +58,7 @@ private class TestUpdateAccountBatch {
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
-        System.assertEquals(60, [select count() from Orders]);
+        System.assertEquals(60, [select count() from Order]);
         System.assertEquals(0, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
     }
 }
