@@ -34,7 +34,7 @@ private class TestUpdateAccountBatch {
         Map<Id, Contract> mc= new Map<Id,Contract>([Select AccountId, Id from Contract]);  
 
         //for each account create 6 Orders 
-        lai = [SELECT Id, ContractId from Account where ImportStatus__c='AccountImported'];
+       
         List<Order> loi = new List<Order>(); 
         Integer simTotAmt = 10000;
         for (Account a : lai) {
