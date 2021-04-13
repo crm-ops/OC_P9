@@ -1,6 +1,6 @@
-@isTest
+@isTest(SeeAllData=True)
 private class TestUpdateAccountBatch {
-    @testSetup(SeeAllData=True)
+    @testSetup
     static void setup() {
 
         //set up 10 accounts
