@@ -1,7 +1,7 @@
 @isTest
 private class TestUpdateAccountBatch {
-    @testSetup
-    static void setup() {
+    @isTest(SeeAllData=True)
+    static void should_populate_account_chiffreAffaire() {
 
         //Create Pricebook
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB001', Description ='Test PB001 Desc', IsActive=true); 
@@ -81,9 +81,8 @@ private class TestUpdateAccountBatch {
             
             insert loi;
  
-    }
-    @isTest
-    static void test() {
+    
+   
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
         Id batchId = Database.executeBatch(uab);
@@ -91,5 +90,6 @@ private class TestUpdateAccountBatch {
         // after the testing stops, assert records were updated properly
         System.assertEquals(60, [select count() from Order]);
         System.assertEquals(0, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
+    
     }
 }
