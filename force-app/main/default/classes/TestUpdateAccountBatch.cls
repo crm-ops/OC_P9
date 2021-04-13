@@ -61,13 +61,9 @@ private class TestUpdateAccountBatch {
 
             for (Integer nborders = 0; nborders <6; nborders++){
              Id crtId = mc.get(a.Id).get('ContractId');   
-             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = 'b12' , Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, TotalAmount=simTotAmt);
+             Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = 'b12' , Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350, ImportStatus__c='OrderImported');
              loi.add(o);
-             simTotAmt +=100;
-
             }
-             simTotAmt +=1000;
-         
         } 
             
             insert loi;
