@@ -11,6 +11,8 @@ trigger UpdateAccountTurnover on Order (after update) {
         if (Trigger.isUpdate) {
             for (Order o : Trigger.new) {
 
+                //adding Order status condition to "Ordered" 
+                if(o.Status=='Ordered')
                 acntIds.add(o.AccountId);
             }
         }
