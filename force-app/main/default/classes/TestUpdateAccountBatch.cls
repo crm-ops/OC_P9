@@ -109,7 +109,7 @@ private class TestUpdateAccountBatch {
         System.assertEquals(90000, sumorders[0].get('sumorders'));
         System.assertEquals(60, [select count() from OrderItem]);
         System.assertEquals(10, [select count() from Account where ImportStatus__c = 'AccountImported']);
-        System.assertEquals(1500,  testAccount.Chiffre_d_affaire__c );
+        System.assertEquals(9000,  testAccount.Chiffre_d_affaire__c );
     
     }
 }
