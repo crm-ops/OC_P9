@@ -98,8 +98,8 @@ private class TestUpdateAccountBatch {
     
    
         Test.startTest();
-       // UpdateAccountsBatch uab = new UpdateAccountsBatch();
-       // Id batchId = Database.executeBatch(uab);
+        UpdateAccountsBatch uab = new UpdateAccountsBatch();
+        Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
         System.assertEquals(60, [select count() from Order]);
