@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 1,
+        "passing": 0,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "0%",
+        "failRate": "100%",
+        "testStartTime": "Apr 14, 2021 12:03 PM",
+        "testExecutionTime": "3646 ms",
+        "testTotalTime": "3646 ms",
+        "commandTime": "10435 ms",
+        "hostname": "https://data-page-19352-dev-ed.cs101.my.salesforce.com",
+        "orgId": "00D1X00000034R1UAI",
+        "username": "test-in7nqa4fsmgt@example.com",
+        "testRunId": "7071X00001XHZ8q",
+        "userId": "0051X000007SSFeQAO"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009TNZhUAO"
+            },
+            "Id": "07M1X000009TNZhUAO",
+            "QueueItemId": "7091X0000019pNpQAI",
+            "StackTrace": "Class.TestUpdateAccountBatch.should_populate_account_chiffreAffaire: line 112, column 1",
+            "Message": "System.AssertException: Assertion Failed: Expected: 1500, Actual: 0",
+            "AsyncApexJobId": "7071X00001XHZ8qQAH",
+            "MethodName": "should_populate_account_chiffreAffaire",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005spL7QAI"
+                },
+                "Id": "01p1X000005spL7QAI",
+                "Name": "TestUpdateAccountBatch",
+                "NamespacePrefix": null
+            },
+            "RunTime": 3646,
+            "FullName": "TestUpdateAccountBatch.should_populate_account_chiffreAffaire"
+        }
+    ]
+}

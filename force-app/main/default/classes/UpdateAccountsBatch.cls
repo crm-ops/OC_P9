@@ -8,7 +8,7 @@ global class UpdateAccountsBatch implements Database.Batchable<sObject>, Databas
     
    global void execute(Database.BatchableContext bc, List<Account> scope){      
 
-       Integer countOrders = [Select count() from Order];
+       Integer countOrders = [Select count() from Order WHERE ImportStatus__c='OrdersImported'];
        List<AggregateResult> listOrders =  [SELECT AccountId ,Sum(TotalAmount) sumTotalAmount  FROM Order WHERE ImportStatus__c='OrdersImported' GROUP BY AccountId];
        
 		for(integer i=0; i < scope.size(); i++){
