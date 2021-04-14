@@ -1,4 +1,4 @@
-global class UpdateAccountsBatch implements Database.Batchable<sObject>{
+global class UpdateAccountsBatch implements Database.Batchable<sObject>, Database.Stateful {
     
    global Database.QueryLocator start(Database.BatchableContext bc){ 
        //Requeter seulement les comptes qui ont au moins une commande avec le Status 'Ordered'
