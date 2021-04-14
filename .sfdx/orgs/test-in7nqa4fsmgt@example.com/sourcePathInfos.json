@@ -131,12 +131,13 @@
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects",
     "isDirectory": true,
-    "size": 128,
-    "modifiedTime": 1617867431000,
-    "changeTime": 1617898111804,
-    "contentHash": "eabeeb14fa88ebb92b03aa3079ae6ceee58b4100",
+    "size": 160,
+    "modifiedTime": 1618388593000,
+    "changeTime": 1618388593978,
+    "contentHash": "5719697bbc102bd4311f966f3d1c3c0ad4ec19a2",
     "state": "u",
-    "package": "force-app"
+    "package": "force-app",
+    "deferContentHash": true
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/Account": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/Account",
@@ -335,10 +336,10 @@
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/TestUpdateAccountBatch.cls": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/TestUpdateAccountBatch.cls",
-    "size": 3065,
-    "modifiedTime": 1618331215458,
-    "changeTime": 1618331215458,
-    "contentHash": "b11665aa16b8bd819a80e47e2b445e911a825a97",
+    "size": 3534,
+    "modifiedTime": 1618389599911,
+    "changeTime": 1618389599911,
+    "contentHash": "49354b79fafea4a3d2d361d1ede546e65bce47b7",
     "state": "u",
     "package": "force-app",
     "metadataType": "ApexClass",
@@ -357,13 +358,14 @@
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/UpdateAccountsBatch.cls": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/UpdateAccountsBatch.cls",
-    "size": 1014,
-    "modifiedTime": 1618307292371,
-    "changeTime": 1618307292371,
-    "contentHash": "b36abcc8696e62f8806d2f2e60f5e68707765083",
+    "size": 1153,
+    "modifiedTime": 1618389834856,
+    "changeTime": 1618389834856,
+    "contentHash": "b66006a20084a12286d4ca784db4c56743a471e4",
     "state": "u",
     "package": "force-app",
-    "metadataType": "ApexClass"
+    "metadataType": "ApexClass",
+    "deferContentHash": true
   },
   "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/UpdateAccountsBatch.cls-meta.xml": {
     "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/classes/UpdateAccountsBatch.cls-meta.xml",
@@ -392,6 +394,37 @@
     "size": 396,
     "modifiedTime": 1618328840043,
     "changeTime": 1618328840579,
+    "contentHash": "b740ec629eb8ac4f9c340568bae29ef341e9ba46",
+    "isMetadataFile": true,
+    "state": "u",
+    "package": "force-app",
+    "metadataType": "CustomField"
+  },
+  "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem": {
+    "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem",
+    "isDirectory": true,
+    "size": 96,
+    "modifiedTime": 1618388593000,
+    "changeTime": 1618388593988,
+    "contentHash": "70f132fe13e692866a539996a6b9a05b46076a07",
+    "state": "u",
+    "package": "force-app"
+  },
+  "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem/fields": {
+    "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem/fields",
+    "isDirectory": true,
+    "size": 96,
+    "modifiedTime": 1618388593000,
+    "changeTime": 1618388593998,
+    "contentHash": "97ee3b6e24d45ba29be22a980613f08b2976a67b",
+    "state": "u",
+    "package": "force-app"
+  },
+  "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem/fields/ImportStatus__c.field-meta.xml": {
+    "sourcePath": "/Users/sebastien/Documents/0-Helpforce/0-Training/0-Openclassrooms/P9_Sebastien_Vige/4-Project/Sources/OC_P9/force-app/main/default/objects/OrderItem/fields/ImportStatus__c.field-meta.xml",
+    "size": 396,
+    "modifiedTime": 1618388601227,
+    "changeTime": 1618388601227,
     "contentHash": "b740ec629eb8ac4f9c340568bae29ef341e9ba46",
     "isMetadataFile": true,
     "state": "u",

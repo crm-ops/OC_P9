@@ -103,7 +103,9 @@ private class TestUpdateAccountBatch {
         Test.stopTest();
         // after the testing stops, assert records were updated properly
         System.assertEquals(60, [select count() from Order]);
-        //System.assertEquals(10, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
+        System.assertEquals(60, [select count() from OrderItem]);
+        System.assertEquals(10, [select count() from Account where ImportStatus__c = 'AccountImported']);
+        System.assertEquals(90000, [select ImportStatus__c, sum(Chiffre_d_affaire__c) from Account where ImportStatus__c = 'AccountImported' GROUP BY ImportStatus__c]);
     
     }
 }
