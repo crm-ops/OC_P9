@@ -31,7 +31,7 @@ private class TestUpdateAccountBatch {
 
         //set up 1000 accounts
         List<Account> lai = new List<Account>();
-        for (Integer i = 0; i<400;i++){
+        for (Integer i = 0; i<300;i++){
             Account a = new Account(Name = 'Test Account_'+i, Chiffre_d_affaire__c=0, ImportStatus__c='AccountImported');
             lai.add(a);
         }
@@ -59,7 +59,7 @@ private class TestUpdateAccountBatch {
        
         List<Order> loi = new List<Order>(); 
         for (Account a : lai) {
-            for (Integer nborders = 0; nborders <60; nborders++){
+            for (Integer nborders = 0; nborders <2; nborders++){
                 String crtId='';
                 for(ID idKey:mc.keySet()) {
                     Contract c= mc.get(idKey);
@@ -103,11 +103,11 @@ private class TestUpdateAccountBatch {
 
         Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
         List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order];
-        System.assertEquals(24000, [select count() from Order]);
-        System.assertEquals(36000000, sumorders[0].get('sumorders'));
-        System.assertEquals(24000, [select count() from OrderItem]);
-        System.assertEquals(400, [select count() from Account where ImportStatus__c = 'AccountImported']);
-        System.assertEquals(90000,  testAccount.Chiffre_d_affaire__c );
+        System.assertEquals(600, [select count() from Order]);
+        System.assertEquals(900000, sumorders[0].get('sumorders'));
+        System.assertEquals(600, [select count() from OrderItem]);
+        System.assertEquals(300, [select count() from Account where ImportStatus__c = 'AccountImported']);
+        System.assertEquals(1500,  testAccount.Chiffre_d_affaire__c );
     
     }
 }
