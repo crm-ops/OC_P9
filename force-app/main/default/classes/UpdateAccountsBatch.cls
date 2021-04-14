@@ -8,14 +8,14 @@ global class UpdateAccountsBatch implements Database.Batchable<sObject>{
     
    global void execute(Database.BatchableContext bc, List<Account> scope){      
 
-       list<AggregateResult> listOrders =  [SELECT Id, AccountId ,Sum(TotalAmount) sumTotalAmount  FROM Order WHERE ImportStatus='OrdersImported' GROUP BY AccountId];
+       list<AggregateResult> listOrders =  [SELECT Id, AccountId ,Sum(TotalAmount) sumTotalAmount  FROM Order WHERE ImportStatus__c='OrdersImported' GROUP BY AccountId];
        
 		for(integer i=0; i < scope.size(); i++){
 			Account myAccount = scope[i];
 			myAccount.Chiffre_d_affaire__c = 0;
            for(integer j=0; j < listOrders.size(); j++){
                if(listOrders[j].get('AccountId') == myAccount.Id){
-                   myAccount.Chiffre_d_affaire__c = listOrders[j].get('sumTotalAmount');
+                   myAccount.Chiffre_d_affaire__c = (Decimal)listOrders[j].get('sumTotalAmount');
                }                   
            }
        }
