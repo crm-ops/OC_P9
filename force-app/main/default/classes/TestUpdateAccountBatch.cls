@@ -80,16 +80,30 @@ private class TestUpdateAccountBatch {
         } 
             
             insert loi;
- 
+
+        
+        List<Order> lou = [SELECT Id FROM Order WHERE Status ='Ordered' AND  ImportStatus__c='OrderImported'];
+        List<OrderItem> listoibase = new List<OrderItem>();
+        for (Order o :lou) {
+
+            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150, ImportStatus__c='OrderItemImported');
+            listoibase.add(oi);
+
+        }
+
+        insert listoibase;
+        update lou;
+
+        
     
    
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
-        Id batchId = Database.executeBatch(uab);
+       // Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
         System.assertEquals(60, [select count() from Order]);
-        System.assertEquals(0, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
+        //System.assertEquals(10, [select count() from Account where ImportStatus__c = 'OrdersAggregated']);
     
     }
 }

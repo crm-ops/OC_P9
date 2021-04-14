@@ -1,13 +1,14 @@
 global class UpdateAccountsBatch implements Database.Batchable<sObject>{
     
-   global Database.QueryLocator start(Database.BatchableContext info){ 
+   global Database.QueryLocator start(Database.BatchableContext bc){ 
        //Requeter seulement les comptes qui ont au moins une commande avec le Status 'Ordered'
-       return Database.getQueryLocator('SELECT Id FROM Account');
+       return Database.getQueryLocator('SELECT Id, Chiffre_d_affaire__c FROM Account WHERE ImportStatus__c=\'AccountImported\'');
 
    }
     
-   global void execute(Database.BatchableContext info, List<Account> scope){      
-       list<Order> listOrders =  [SELECT Id, TotalAmount, AccountId FROM Order];
+   global void execute(Database.BatchableContext bc, List<Account> scope){      
+
+       list<Aggregate> listOrders =  [SELECT Id, TotalAmount, AccountId FROM Order];
        
 		for(integer i=0; i < scope.size(); i++){
 			Account myAccount = scope[i];
