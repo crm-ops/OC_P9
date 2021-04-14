@@ -95,13 +95,14 @@ private class TestUpdateAccountBatch {
         update lou;
 
         
-        Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
+       
    
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
+        Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
         System.assertEquals(60, [select count() from Order]);
         System.assertEquals(60, [select count() from OrderItem]);
         System.assertEquals(10, [select count() from Account where ImportStatus__c = 'AccountImported']);
