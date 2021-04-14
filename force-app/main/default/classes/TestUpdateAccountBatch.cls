@@ -29,9 +29,9 @@ private class TestUpdateAccountBatch {
         );
         Insert pbe;
 
-        //set up 100 accounts
+        //set up 1000 accounts
         List<Account> lai = new List<Account>();
-        for (Integer i = 0; i<100;i++){
+        for (Integer i = 0; i<400;i++){
             Account a = new Account(Name = 'Test Account_'+i, Chiffre_d_affaire__c=0, ImportStatus__c='AccountImported');
             lai.add(a);
         }
@@ -103,10 +103,10 @@ private class TestUpdateAccountBatch {
 
         Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
         List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order];
-        System.assertEquals(6000, [select count() from Order]);
-        System.assertEquals(9000000, sumorders[0].get('sumorders'));
-        System.assertEquals(6000, [select count() from OrderItem]);
-        System.assertEquals(100, [select count() from Account where ImportStatus__c = 'AccountImported']);
+        System.assertEquals(24000, [select count() from Order]);
+        System.assertEquals(36000000, sumorders[0].get('sumorders'));
+        System.assertEquals(24000, [select count() from OrderItem]);
+        System.assertEquals(400, [select count() from Account where ImportStatus__c = 'AccountImported']);
         System.assertEquals(90000,  testAccount.Chiffre_d_affaire__c );
     
     }
