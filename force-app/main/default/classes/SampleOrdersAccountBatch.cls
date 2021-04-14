@@ -1,5 +1,5 @@
 
-private class SampleOrdersAccountBatch {
+public class SampleOrdersAccountBatch {
 
     static void insert_accounts_orders() {
 
@@ -29,7 +29,7 @@ private class SampleOrdersAccountBatch {
         );
         Insert pbe;
 
-        
+
         //set up 1000 accounts
         List<Account> lai = new List<Account>();
         for (Integer i = 0; i<200;i++){
