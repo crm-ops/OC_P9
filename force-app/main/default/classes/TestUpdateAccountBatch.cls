@@ -95,7 +95,7 @@ private class TestUpdateAccountBatch {
         update lou;
 
         
-    
+        Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
    
         Test.startTest();
         UpdateAccountsBatch uab = new UpdateAccountsBatch();
@@ -105,7 +105,7 @@ private class TestUpdateAccountBatch {
         System.assertEquals(60, [select count() from Order]);
         System.assertEquals(60, [select count() from OrderItem]);
         System.assertEquals(10, [select count() from Account where ImportStatus__c = 'AccountImported']);
-        System.assertEquals(90000.00, [select sum(Chiffre_d_affaire__c) from Account where ImportStatus__c = 'AccountImported' GROUP BY ImportStatus__c]);
+        System.assertEquals(1500,  testAccount.Chiffre_d_affaire__c );
     
     }
 }
