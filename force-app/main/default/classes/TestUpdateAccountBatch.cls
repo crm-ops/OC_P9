@@ -102,8 +102,11 @@ private class TestUpdateAccountBatch {
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
+
         Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
+        Integer sumorders = [select sum(TotalAmount) from Order];
         System.assertEquals(60, [select count() from Order]);
+        System.assertEquals(90000, sumorders);
         System.assertEquals(60, [select count() from OrderItem]);
         System.assertEquals(10, [select count() from Account where ImportStatus__c = 'AccountImported']);
         System.assertEquals(1500,  testAccount.Chiffre_d_affaire__c );
