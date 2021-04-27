@@ -20,6 +20,8 @@ private class TestUpdateAccountTurnover {
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB001', Description ='Test PB001 Desc', IsActive=true); 
         Insert pb;
 
+        List<Pricebook2> pblist = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Test PB001'];
+
     
         //Standard pricebook entry 
         Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
@@ -90,7 +92,7 @@ private class TestUpdateAccountTurnover {
         List<OrderItem> listoibase = new List<OrderItem>();
 
         List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
-        
+
         for ( Order o :listobase) {
             if (o.AccountId==acc1.Id) {
                 qty=10;
