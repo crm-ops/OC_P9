@@ -88,6 +88,9 @@ private class TestUpdateAccountTurnover {
         //for each order create 1 orderitem line
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
+
+        List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
+        
         for ( Order o :listobase) {
             if (o.AccountId==acc1.Id) {
                 qty=10;
@@ -95,7 +98,7 @@ private class TestUpdateAccountTurnover {
                 qty = 20;
             }
 
-            List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
+           
 
 
             OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbeid[0].Id, Quantity=qty, UnitPrice = 150);
