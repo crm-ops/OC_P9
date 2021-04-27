@@ -70,7 +70,7 @@ private class TestUpdateAccountTurnover {
                 crtid=ctrct2.Id;
             }
 
-            for (Integer i = 0; i<100;i++ ) {
+            for (Integer i = 0; i<10;i++ ) {
 
                 Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350);
                 listobase.add(o);
@@ -119,9 +119,9 @@ private class TestUpdateAccountTurnover {
         List<Order> agr = [SELECT Id  FROM Order];
         
 
-        System.assertEquals(200, agr.size());
-        System.assertEquals(150000,accnt1TotalAmt.Chiffre_d_affaire__c);
-        System.assertEquals(300000,accnt2TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(20, agr.size());
+        System.assertEquals(15000,accnt1TotalAmt.Chiffre_d_affaire__c);
+        System.assertEquals(30000,accnt2TotalAmt.Chiffre_d_affaire__c);
 
 
     }
@@ -196,7 +196,7 @@ private class TestUpdateAccountTurnover {
                 crtid=ctrct2.Id;
             }
 
-            for (Integer i = 0; i<100;i++ ) {
+            for (Integer i = 0; i<10;i++ ) {
 
                 Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=350);
                 listobase.add(o);
@@ -245,7 +245,7 @@ private class TestUpdateAccountTurnover {
         List<Order> agr = [SELECT Id  FROM Order];
         
 
-        System.assertEquals(200, agr.size());
+        System.assertEquals(20, agr.size());
         System.assertEquals(0,accnt1TotalAmt.Chiffre_d_affaire__c);
         System.assertEquals(0,accnt2TotalAmt.Chiffre_d_affaire__c);
 
