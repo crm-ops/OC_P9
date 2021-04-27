@@ -96,7 +96,7 @@ private class TestUpdateAccountTurnover {
                 qty = 20;
             }
 
-            Id pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
+            String pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
 
             OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbeid, Quantity=qty, UnitPrice = 150);
             listoibase.add(oi);
