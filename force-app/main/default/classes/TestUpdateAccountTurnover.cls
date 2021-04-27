@@ -15,17 +15,10 @@ private class TestUpdateAccountTurnover {
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
 
+        
         //Create Pricebook
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB001', Description ='Test PB001 Desc', IsActive=true); 
         Insert pb;
-        
-        //Standard pricebook entry 
-        Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
-        System.debug('Value of standardPB>'+ standardPB.Id);
-
-        PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
-        insert standardPBE;
- 
 
         //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
@@ -37,6 +30,17 @@ private class TestUpdateAccountTurnover {
         );
         Insert pbe;
 
+
+        
+        //Standard pricebook entry 
+        Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
+        System.debug('Value of standardPB>'+ standardPB.Id);
+
+        PricebookEntry standardPBE = new PricebookEntry(Pricebook2Id = standardPB.Id, Product2Id = pd1.Id, UnitPrice = 1000, IsActive = true);
+        insert standardPBE;
+ 
+
+        
         //Create the Contract
         Contract ctrct = new Contract(
             AccountId = acc1.Id,
@@ -92,7 +96,9 @@ private class TestUpdateAccountTurnover {
                 qty = 20;
             }
 
-            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=qty, UnitPrice = 150);
+            PricebookEntryId pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
+
+            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbeid, Quantity=qty, UnitPrice = 150);
             listoibase.add(oi);
         }
 
