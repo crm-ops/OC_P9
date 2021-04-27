@@ -17,10 +17,10 @@ private class TestUpdateAccountTurnover {
 
         
         //Create Pricebook
-        Pricebook2 pb = new Pricebook2 (Name = 'Test PB001', Description ='Test PB001 Desc', IsActive=true); 
+        Pricebook2 pb = new Pricebook2 (Name = 'Test PB002', Description ='Test PB002 Desc', IsActive=true); 
         Insert pb;
 
-        List<Pricebook2> pblist = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Test PB001'];
+        List<Pricebook2> pblist = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Test PB002'];
 
     
         //Standard pricebook entry 
@@ -33,7 +33,7 @@ private class TestUpdateAccountTurnover {
 
          //Create the PricebookEntry
          PricebookEntry pbe = new PricebookEntry(
-            Pricebook2Id = pb.Id,
+            Pricebook2Id = pblist[0].Id,
             Product2Id = pd1.Id,
             UnitPrice = 1020,
             UseStandardPrice = false, 
@@ -77,7 +77,7 @@ private class TestUpdateAccountTurnover {
 
             for (Integer i = 0; i<10;i++ ) {
 
-                Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Ordered', Pricebook2Id=pb.Id, ShipmentCost__c=350);
+                Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Ordered', Pricebook2Id=pblist[0].Id, ShipmentCost__c=350);
                 listobase.add(o);
             }
 
@@ -91,7 +91,7 @@ private class TestUpdateAccountTurnover {
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
 
-        List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pb.id];
+        List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pblist[0].Id];
 
         for ( Order o :listobase) {
             if (o.AccountId==acc1.Id) {
