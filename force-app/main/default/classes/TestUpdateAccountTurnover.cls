@@ -139,6 +139,8 @@ private class TestUpdateAccountTurnover {
 
     }
 
+    
+    /*
     @isTest(SeeAllData=True)
     static void should_not_aggregate_two_orders_status_diff_from_ordered() {
         Account acc1 = new Account(Name = 'Test Account 1', Chiffre_d_affaire__c=0);
@@ -278,7 +280,7 @@ private class TestUpdateAccountTurnover {
         System.assertEquals(0,accnt2TotalAmt.Chiffre_d_affaire__c);
 
 
-    }
+    }*/
     
     
 }
