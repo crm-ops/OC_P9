@@ -94,7 +94,7 @@ private class TestUpdateAccountBatch {
         List<OrderItem> listoibase = new List<OrderItem>();
         for (Order o :lou) {
 
-            testOrderIds.add(lou.Id);
+            testOrderIds.add(o.Id);
             OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150, ImportStatus__c='OrderItemImported');
             listoibase.add(oi);
 
