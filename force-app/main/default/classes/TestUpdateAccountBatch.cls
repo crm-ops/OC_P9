@@ -89,11 +89,12 @@ private class TestUpdateAccountBatch {
             
             insert loi;
 
-        
+        List<Id> testOrderIds = new List<Id>();
         List<Order> lou = [SELECT Id FROM Order WHERE Status ='Ordered' AND  ImportStatus__c='OrderImported' AND AccountId IN :listAccountIds];
         List<OrderItem> listoibase = new List<OrderItem>();
         for (Order o :lou) {
 
+            testOrderIds.add(lou.Id);
             OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150, ImportStatus__c='OrderItemImported');
             listoibase.add(oi);
 
@@ -110,7 +111,7 @@ private class TestUpdateAccountBatch {
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
-        List<Id> testOrderIds = [select Id from Order WHERE AccountId IN :listAccountIds];
+
         Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' AND Id IN :listAccountIds limit 1 ];
         List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order WHERE AccountId IN :listAccountIds];
         System.assertEquals(400, [select count() from Order WHERE AccountId IN :listAccountIds]);
