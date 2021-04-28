@@ -1,10 +1,10 @@
 {
-  "orgName": "Demo Company",
+  "orgName": "P9_ScratchOrg2",
   "edition": "Developer",
   "features": [],
   "settings": {
-    "orgPreferenceSettings": {
-      "s1DesktopEnabled": true
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
     }
   }
 }

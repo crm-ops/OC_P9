@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="force.apex" timestamp="2021-04-11T19:22:45+02:00" hostname="https://data-page-19352-dev-ed.cs101.my.salesforce.com" tests="1" failures="0"  errors="0"  time="5.43">
+        <properties>
+            <property name="outcome" value="Passed"/>
+            <property name="testsRan" value="1"/>
+            <property name="passing" value="1"/>
+            <property name="failing" value="0"/>
+            <property name="skipped" value="0"/>
+            <property name="passRate" value="100%"/>
+            <property name="failRate" value="0%"/>
+            <property name="testStartTime" value="Apr 11, 2021 7:22 PM"/>
+            <property name="testExecutionTime" value="5.43 s"/>
+            <property name="testTotalTime" value="5.43 s"/>
+            <property name="commandTime" value="8.15 s"/>
+            <property name="hostname" value="https://data-page-19352-dev-ed.cs101.my.salesforce.com"/>
+            <property name="orgId" value="00D1X00000034R1UAI"/>
+            <property name="username" value="test-in7nqa4fsmgt@example.com"/>
+            <property name="testRunId" value="7071X00001WrUhQ"/>
+            <property name="userId" value="0051X000007SSFeQAO"/>
+        </properties>
+        <testcase name="should_aggregate_two_orders_on_account" classname="TestUpdateAccountTurnover" time="5.43">
+        </testcase>
+    </testsuite>
+</testsuites>

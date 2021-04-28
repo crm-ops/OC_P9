@@ -1,0 +1,46 @@
+{
+    "summary": {
+        "outcome": "Failed",
+        "testsRan": 1,
+        "passing": 0,
+        "failing": 1,
+        "skipped": 0,
+        "passRate": "0%",
+        "failRate": "100%",
+        "testStartTime": "Apr 10, 2021 6:25 PM",
+        "testExecutionTime": "1101 ms",
+        "testTotalTime": "1101 ms",
+        "commandTime": "3118 ms",
+        "hostname": "https://data-page-19352-dev-ed.cs101.my.salesforce.com/",
+        "orgId": "00D1X00000034R1UAI",
+        "username": "test-in7nqa4fsmgt@example.com",
+        "testRunId": "7071X00001WpfcM",
+        "userId": "0051X000007SSFeQAO"
+    },
+    "tests": [
+        {
+            "attributes": {
+                "type": "ApexTestResult",
+                "url": "/services/data/v51.0/tooling/sobjects/ApexTestResult/07M1X000009S9UlUAK"
+            },
+            "Id": "07M1X000009S9UlUAK",
+            "QueueItemId": "7091X0000019hapQAA",
+            "StackTrace": "Class.TestUpdateAccountTurnover.should_aggregate_two_orders_on_account: line 77, column 1",
+            "Message": "System.DmlException: Update failed. First exception on row 0 with id 8011X000002CvRmQAK; first error: CANNOT_INSERT_UPDATE_ACTIVATE_ENTITY, UpdateAccountTurnover: execution of AfterUpdate\n\ncaused by: System.ListException: Duplicate id in list: 0011X00000oHyy0QAC\n\nTrigger.UpdateAccountTurnover: line 65, column 1: []",
+            "AsyncApexJobId": "7071X00001WpfcMQAR",
+            "MethodName": "should_aggregate_two_orders_on_account",
+            "Outcome": "Fail",
+            "ApexClass": {
+                "attributes": {
+                    "type": "ApexClass",
+                    "url": "/services/data/v51.0/tooling/sobjects/ApexClass/01p1X000005rXLMQA2"
+                },
+                "Id": "01p1X000005rXLMQA2",
+                "Name": "TestUpdateAccountTurnover",
+                "NamespacePrefix": null
+            },
+            "RunTime": 1101,
+            "FullName": "TestUpdateAccountTurnover.should_aggregate_two_orders_on_account"
+        }
+    ]
+}
