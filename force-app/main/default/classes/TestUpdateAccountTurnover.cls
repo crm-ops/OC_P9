@@ -155,8 +155,10 @@ private class TestUpdateAccountTurnover {
         Insert pd1;
 
         //Create Pricebook
-        Pricebook2 pb = new Pricebook2 (Name = 'Test PB001', Description ='Test PB001 Desc', IsActive=true); 
+        Pricebook2 pb = new Pricebook2 (Name = 'Test PB002', Description ='Test PB002 Desc', IsActive=true); 
         Insert pb;
+
+        List<Pricebook2> pblist = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Test PB002'];
         
         //Standard pricebook entry 
         Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
