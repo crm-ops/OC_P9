@@ -87,7 +87,7 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order];
+        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order WHERE Pricebook2Id= :pblist[0].Id];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
