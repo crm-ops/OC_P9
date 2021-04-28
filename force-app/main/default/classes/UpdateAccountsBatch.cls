@@ -11,7 +11,7 @@ global class UpdateAccountsBatch implements Database.Batchable<sObject>, Databas
        Integer countOrders = [Select count() from Order WHERE ImportStatus__c='OrderImported'];
        List<AggregateResult> listOrders =  [SELECT AccountId ,Sum(TotalAmount) sumTotalAmount  FROM Order WHERE ImportStatus__c='OrderImported' GROUP BY AccountId];
        
-		for(integer i=0; i < scope.size(); i++){
+		/*for(integer i=0; i < scope.size(); i++){
 			Account myAccount = scope[i];
 			myAccount.Chiffre_d_affaire__c = 0;
            for(integer j=0; j < listOrders.size(); j++){
@@ -19,7 +19,17 @@ global class UpdateAccountsBatch implements Database.Batchable<sObject>, Databas
                    myAccount.Chiffre_d_affaire__c = (Decimal)listOrders[j].get('sumTotalAmount');
                }                   
            }
+       }*/
+
+
+       for(Account myAccount : scope ){
+        myAccount.Chiffre_d_affaire__c = 0;
+            for(integer j=0; j < listOrders.size(); j++){
+                    if(listOrders[j].get('AccountId') == myAccount.Id){
+               myAccount.Chiffre_d_affaire__c = (Decimal)listOrders[j].get('sumTotalAmount');
+           }                   
        }
+   }
        
        update scope;
    }    
