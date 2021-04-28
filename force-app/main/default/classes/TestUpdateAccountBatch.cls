@@ -29,6 +29,12 @@ private class TestUpdateAccountBatch {
         );
         Insert pbe;
 
+        //Update previously imported account 
+        for (Account a : [SELECT Id, ImportStatus__c FROM Account WHERE ImportStatus__c = 'AccountImported']) {
+            a.ImportStatusC = 'PreviouslyImported';
+        }
+        update Account;
+
         //set up 1000 accounts
         List<Account> lai = new List<Account>();
         for (Integer i = 0; i<1;i++){
