@@ -154,12 +154,14 @@ private class TestUpdateAccountTurnover {
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         Insert pd1;
 
+        
         //Create Pricebook
         Pricebook2 pb = new Pricebook2 (Name = 'Test PB002', Description ='Test PB002 Desc', IsActive=true); 
         Insert pb;
 
         List<Pricebook2> pblist = [SELECT Id, Name FROM Pricebook2 WHERE Name = 'Test PB002'];
-        
+
+    
         //Standard pricebook entry 
         Pricebook2 standardPB = [SELECT Id FROM Pricebook2 WHERE isStandard=true];
         System.debug('Value of standardPB>'+ standardPB.Id);
@@ -168,9 +170,9 @@ private class TestUpdateAccountTurnover {
         insert standardPBE;
  
 
-        //Create the PricebookEntry
-        PricebookEntry pbe = new PricebookEntry(
-            Pricebook2Id = pb.Id,
+         //Create the PricebookEntry
+         PricebookEntry pbe = new PricebookEntry(
+            Pricebook2Id = pblist[0].Id,
             Product2Id = pd1.Id,
             UnitPrice = 1020,
             UseStandardPrice = false, 
@@ -178,6 +180,9 @@ private class TestUpdateAccountTurnover {
         );
         Insert pbe;
 
+        List<PricebookEntry> pbelist = [SELECT Id, Pricebook2Id, Product2Id, UnitPrice, IsActive  FROM PricebookEntry];
+
+        
         //Create the Contract
         Contract ctrct = new Contract(
             AccountId = acc1.Id,
@@ -203,7 +208,7 @@ private class TestUpdateAccountTurnover {
         String crtid='';
 
         for(Account a:al) {
-            if(a.id == acc1.Id ){
+            if(a.id == acc1.Id){
                 crtid=ctrct.Id;
 
             } else 
@@ -213,7 +218,7 @@ private class TestUpdateAccountTurnover {
 
             for (Integer i = 0; i<10;i++ ) {
 
-                Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Draft', Pricebook2Id=pb.Id, ShipmentCost__c=350);
+                Order o = new Order(AccountId = a.Id, EffectiveDate=Date.newInstance(2021, 4, 1) , ContractId = crtid, Status='Draft', Pricebook2Id=pblist[0].Id, ShipmentCost__c=350);
                 listobase.add(o);
             }
 
@@ -221,25 +226,33 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id, AccountId FROM Order];
+        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
+
+        List<PricebookEntry> pbeid = [Select Id,  Pricebook2Id from PricebookEntry where PriceBook2Id = :pblist[0].Id];
+
         for ( Order o :listobase) {
-            if (o.AccountId==acc1.Id ) {
+            if (o.AccountId==acc1.Id && o.Pricebook2Id == pblist[0].Id) {
                 qty=10;
-            } else  {
+            } else if (o.Pricebook2Id == pblist[0].Id) {
                 qty = 20;
             }
 
-            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbe.Id, Quantity=qty, UnitPrice = 150);
+           
+
+
+            OrderItem oi = new OrderItem(OrderId = o.Id, PricebookEntryId = pbeid[0].Id, Quantity=qty, UnitPrice = 150);
             listoibase.add(oi);
         }
 
 
         //dml to insert line items & update orders in bulk 
         insert listoibase;
+       
+
        
 
 
