@@ -87,7 +87,11 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order WHERE Pricebook2Id= :pblist[0].Id];
+        List<Id> accntIds = new List<Id>();
+        accntIds.add(acc1.Id);
+        accntIds.add(acc2.Id);
+
+        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order WHERE Pricebook2Id= :pblist[0].Id AND AccountId IN :accntIds];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
