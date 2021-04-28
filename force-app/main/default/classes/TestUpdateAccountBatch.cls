@@ -40,8 +40,10 @@ private class TestUpdateAccountBatch {
 
         //for each account create 1 contract 
         List<Contract> lci = new List<Contract>();
+        List<Id> listAccountIds = new List<Id>();
         for (Account a : lai) {
 
+            listAccountIds.add(a.Id);
             Contract c = new Contract(
             AccountId=a.Id,
             Status='Draft',
@@ -80,7 +82,7 @@ private class TestUpdateAccountBatch {
             insert loi;
 
         
-        List<Order> lou = [SELECT Id FROM Order WHERE Status ='Ordered' AND  ImportStatus__c='OrderImported'];
+        List<Order> lou = [SELECT Id FROM Order WHERE Status ='Ordered' AND  ImportStatus__c='OrderImported' AND AccountId IN :listAccountIds];
         List<OrderItem> listoibase = new List<OrderItem>();
         for (Order o :lou) {
 
@@ -101,12 +103,12 @@ private class TestUpdateAccountBatch {
         Test.stopTest();
         // after the testing stops, assert records were updated properly
 
-        Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' limit 1];
-        List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order];
-        System.assertEquals(400, [select count() from Order]);
+        Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' AND AccountId IN :listAccountIds limit 1 ];
+        List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order WHERE AccountId IN :listAccountIds];
+        System.assertEquals(400, [select count() from Order WHERE AccountId IN :listAccountIds]);
         System.assertEquals(600000, sumorders[0].get('sumorders'));
         System.assertEquals(400, [select count() from OrderItem]);
-        System.assertEquals(200, [select count() from Account where ImportStatus__c = 'AccountImported']);
+        System.assertEquals(200, [select count() from Account where ImportStatus__c = 'AccountImported' AND AccountId IN :listAccountIds]);
         System.assertEquals(3000,  testAccount.Chiffre_d_affaire__c );
     
     }
