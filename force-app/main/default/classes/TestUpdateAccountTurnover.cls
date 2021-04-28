@@ -227,9 +227,9 @@ private class TestUpdateAccountTurnover {
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
         for ( Order o :listobase) {
-            if (o.AccountId==acc1.Id && o.Pricebook2Id == pblist[0].Id) {
+            if (o.AccountId==acc1.Id ) {
                 qty=10;
-            } else if (o.Pricebook2Id == pblist[0].Id) {
+            } else  {
                 qty = 20;
             }
 
