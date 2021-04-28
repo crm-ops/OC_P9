@@ -39,7 +39,7 @@ private class TestUpdateAccountBatch {
 
         //set up 1000 accounts
         List<Account> lai = new List<Account>();
-        for (Integer i = 0; i<1;i++){
+        for (Integer i = 0; i<200;i++){
             Account a = new Account(Name = 'Test Account_'+i, Chiffre_d_affaire__c=0, ImportStatus__c='AccountImported');
             lai.add(a);
         }
