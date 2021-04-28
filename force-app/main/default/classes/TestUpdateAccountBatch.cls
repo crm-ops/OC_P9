@@ -110,12 +110,12 @@ private class TestUpdateAccountBatch {
         Id batchId = Database.executeBatch(uab);
         Test.stopTest();
         // after the testing stops, assert records were updated properly
-
+        List<Id> testOrderIds = [select Id from Order WHERE AccountId IN :listAccountIds];
         Account testAccount  = [select Id, Chiffre_d_affaire__c from Account where ImportStatus__c = 'AccountImported' AND Id IN :listAccountIds limit 1 ];
         List<AggregateResult> sumorders = [select sum(TotalAmount) sumorders from Order WHERE AccountId IN :listAccountIds];
         System.assertEquals(400, [select count() from Order WHERE AccountId IN :listAccountIds]);
         System.assertEquals(600000, sumorders[0].get('sumorders'));
-        System.assertEquals(400, [select count() from OrderItem]);
+        System.assertEquals(400, [select count() from OrderItem where OrderId IN :testOrderIds]);
         System.assertEquals(200, [select count() from Account where ImportStatus__c = 'AccountImported' AND Id IN :listAccountIds]);
         System.assertEquals(3000,  testAccount.Chiffre_d_affaire__c );
     
