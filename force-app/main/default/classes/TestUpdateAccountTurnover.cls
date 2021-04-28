@@ -31,7 +31,7 @@ private class TestUpdateAccountTurnover {
         insert standardPBE;
  
 
-         //Create the PricebookEntry
+     /*    //Create the PricebookEntry
          PricebookEntry pbe = new PricebookEntry(
             Pricebook2Id = pblist[0].Id,
             Product2Id = pd1.Id,
@@ -40,6 +40,8 @@ private class TestUpdateAccountTurnover {
             IsActive = true
         );
         Insert pbe;
+
+        */ 
 
         List<PricebookEntry> pbelist = [SELECT Id, Pricebook2Id, Product2Id, UnitPrice, IsActive  FROM PricebookEntry];
 
