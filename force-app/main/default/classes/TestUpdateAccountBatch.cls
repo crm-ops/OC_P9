@@ -55,7 +55,7 @@ private class TestUpdateAccountBatch {
         } 
             insert lci;
 
-        Map<Id, Contract> mc= new Map<Id,Contract>([Select Id, AccountId from Contract]);  
+        Map<Id, Contract> mc= new Map<Id,Contract>([Select Id, AccountId from Contract WHERE AccountId in :listAccountIds]);  
 
         //for each account create 2 Orders per account 
        
