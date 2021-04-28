@@ -41,6 +41,8 @@ private class TestUpdateAccountTurnover {
         );
         Insert pbe;
 
+        List<PricebookEntry> pbelist = [SELECT Id, Pricebook2Id, Product2Id, UnitPrice, IsActive  FROM PricebookEntry];
+
         
         //Create the Contract
         Contract ctrct = new Contract(
@@ -85,13 +87,13 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id, AccountId FROM Order];
+        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
 
-        List<PricebookEntry> pbeid = [Select Id from PricebookEntry where PriceBook2Id = :pblist[0].Id];
+        List<PricebookEntry> pbeid = [Select Id,  Pricebook2Id from PricebookEntry where PriceBook2Id = :pblist[0].Id];
 
         for ( Order o :listobase) {
             if (o.AccountId==acc1.Id) {
