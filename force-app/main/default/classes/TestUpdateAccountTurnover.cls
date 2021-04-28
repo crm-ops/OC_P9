@@ -96,9 +96,9 @@ private class TestUpdateAccountTurnover {
         List<PricebookEntry> pbeid = [Select Id,  Pricebook2Id from PricebookEntry where PriceBook2Id = :pblist[0].Id];
 
         for ( Order o :listobase) {
-            if (o.AccountId==acc1.Id) {
+            if (o.AccountId==acc1.Id && o.Pricebook2Id == pblist[0].Id) {
                 qty=10;
-            } else {
+            } else if (o.Pricebook2Id == pblist[0].Id) {
                 qty = 20;
             }
 
@@ -201,7 +201,7 @@ private class TestUpdateAccountTurnover {
         String crtid='';
 
         for(Account a:al) {
-            if(a.id == acc1.Id){
+            if(a.id == acc1.Id ){
                 crtid=ctrct.Id;
 
             } else 
@@ -225,9 +225,9 @@ private class TestUpdateAccountTurnover {
         Integer qty = 0;
         List<OrderItem> listoibase = new List<OrderItem>();
         for ( Order o :listobase) {
-            if (o.AccountId==acc1.Id) {
+            if (o.AccountId==acc1.Id && o.Pricebook2Id == pblist[0].Id) {
                 qty=10;
-            } else {
+            } else if (o.Pricebook2Id == pblist[0].Id) {
                 qty = 20;
             }
 
