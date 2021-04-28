@@ -108,7 +108,7 @@ private class TestUpdateAccountBatch {
         System.assertEquals(400, [select count() from Order WHERE AccountId IN :listAccountIds]);
         System.assertEquals(600000, sumorders[0].get('sumorders'));
         System.assertEquals(400, [select count() from OrderItem]);
-        System.assertEquals(200, [select count() from Account where ImportStatus__c = 'AccountImported' AND AccountId IN :listAccountIds]);
+        System.assertEquals(200, [select count() from Account where ImportStatus__c = 'AccountImported' AND Id IN :listAccountIds]);
         System.assertEquals(3000,  testAccount.Chiffre_d_affaire__c );
     
     }
