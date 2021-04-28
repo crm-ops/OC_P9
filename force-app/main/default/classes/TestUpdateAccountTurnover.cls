@@ -144,7 +144,7 @@ private class TestUpdateAccountTurnover {
     }
 
     
-    /*
+    
     @isTest(SeeAllData=True)
     static void should_not_aggregate_two_orders_status_diff_from_ordered() {
         Account acc1 = new Account(Name = 'Test Account 1', Chiffre_d_affaire__c=0);
@@ -232,7 +232,11 @@ private class TestUpdateAccountTurnover {
 
         insert listobase;
 
-        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order];
+        List<Id> accntIds = new List<Id>();
+        accntIds.add(acc1.Id);
+        accntIds.add(acc2.Id);
+
+        listobase = [SELECT Id,  AccountId, Pricebook2Id FROM Order WHERE Pricebook2Id= :pblist[0].Id AND AccountId IN :accntIds];
         
         //for each order create 1 orderitem line
         Integer qty = 0;
@@ -257,10 +261,6 @@ private class TestUpdateAccountTurnover {
 
         //dml to insert line items & update orders in bulk 
         insert listoibase;
-       
-
-       
-
 
 
         Test.startTest();
@@ -284,7 +284,7 @@ private class TestUpdateAccountTurnover {
         System.assertEquals(0,accnt2TotalAmt.Chiffre_d_affaire__c);
 
 
-    }*/
+    }
     
     
 }
